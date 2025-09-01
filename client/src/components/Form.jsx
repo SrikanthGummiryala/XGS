@@ -358,7 +358,7 @@ const Form = ({ onClose }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/contact",
+        "https://xgs.onrender.com/api/contact",   //"https://xgs.onrender.com/api/contact"
         formData
       );
       setSubmitStatus({ type: "success", message: response.data.message });
