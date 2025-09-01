@@ -167,6 +167,79 @@
 
 // ---------------------------------------------------------------------------------------
 
+// import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+// import CardSlider from "../components/CardSlider";
+// import Accreditations from "../components/Accreditations";
+// import Journey from "../components/Journey";
+// import VisaSection from "../components/VisaSection";
+// import Destinations from "../components/Destinations";
+// import WhyChooseUs from "../components/WhyChooseUs";
+// import XgsSection from "../components/XgsSection";
+// import HomeCarousel from "../components/HomeCarousel";
+// import Form from "../components/Form";
+// import SocialSidebar from "../components/SocialSidebar";
+
+// const Home = () => {
+//   const [showModal, setShowModal] = useState(false);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     // Show modal after 4 seconds
+//     const timer = setTimeout(() => {
+//       setShowModal(true);
+//     }, 3000);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   const handleClose = () => {
+//     console.log("called")
+//     setShowModal(false);
+//     // navigate("/"); // ✅ navigate back to home
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <HomeCarousel />
+//       {/* <SocialSidebar /> */}
+//       <XgsSection />
+//       <WhyChooseUs />
+//       <Destinations />
+//       <VisaSection />
+//       <Journey />
+//       <Accreditations />
+//       <CardSlider />
+//       <Footer />
+
+//       {/* Contact Form Modal */}
+//       {showModal && (
+//         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center mt-20 z-50 p-4">
+//           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg relative">
+//             {/* Close button */}
+//             {/* <button
+//               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 font-bold text-2xl"
+//               onClick={handleClose}
+//             >
+//               &times;
+//             </button> */}
+
+//             {/* Contact Form */}
+//             <Form onClose={handleClose}/>
+//           </div>
+//         </div>
+//       )}
+//     </>
+//   );
+// };
+
+// export default Home;
+
+
+
+// ---------------------------------------------------------------
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -187,7 +260,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Show modal after 4 seconds
+    // Show modal after 3 seconds
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 3000);
@@ -195,9 +268,9 @@ const Home = () => {
   }, []);
 
   const handleClose = () => {
-    console.log("called")
+    console.log("called");
     setShowModal(false);
-    // navigate("/"); // ✅ navigate back to home
+    // navigate("/"); // ✅ navigate back to home if needed
   };
 
   return (
@@ -216,9 +289,9 @@ const Home = () => {
 
       {/* Contact Form Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg relative">
-            {/* Close button */}
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg relative overflow-y-auto max-h-[90vh]">
+            {/* Close button (optional) */}
             {/* <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 font-bold text-2xl"
               onClick={handleClose}
@@ -227,7 +300,7 @@ const Home = () => {
             </button> */}
 
             {/* Contact Form */}
-            <Form onClose={handleClose}/>
+            <Form onClose={handleClose} />
           </div>
         </div>
       )}
@@ -236,3 +309,4 @@ const Home = () => {
 };
 
 export default Home;
+
