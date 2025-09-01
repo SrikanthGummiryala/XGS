@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite; /* slower for big screens */
+}
+
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 18s; /* slightly faster on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .animate-scroll {
+    animation-duration: 12s; /* faster on mobiles */
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+
+
